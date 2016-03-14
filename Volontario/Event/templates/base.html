@@ -56,15 +56,6 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Strona główna</a></li>
               <!-- Kod listy rozwijanej -->
-              <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dokumenty <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                      <li><a href="#">Zaświadczenia</a></li>
-                      <li><a href="#">Zwolnienia</a></li>
-                      <li><a href="#">Huje muje dzikie weze </a></li>
-                      
-                  </ul>
-              </li>
 
               <li class="dropdown">
               <a href="{% url 'Event.views.event_list' %}" class="dropdown-toggle" data-toggle="dropdown">Wydarzenia <b class="caret"></b></a>
@@ -93,8 +84,8 @@
               <a href="" class="dropdown-toggle" data-toggle="dropdown"> Dokumenty <b class="caret"></b></a>
                   <ul class="dropdown-menu">
 
-                     <li><a href="{% url 'Documents.views.docs_list' %}">Dupa </a></li>
-                  <li><a href="{% url 'Documents.views.new' %}">Niedupa </a></li>
+                     <li><a href="{% url 'Documents.views.docs_list' %}">Lista </a></li>
+                  <li><a href="{% url 'Documents.views.new' %}">Dodaj </a></li>
                
                       
               </ul>
