@@ -1,0 +1,56 @@
+.col1{
+	background: red;
+}
+.col2{
+	background: blue;
+}
+
+.col3{
+	background: orange;
+}
+
+.col4{
+
+	background: yellow;
+}
+
+.col5{
+
+	background: red;
+}
+
+.col6{
+
+	background: pink;
+
+}
+.logo {
+  position:relative;
+  height:312px; 
+  background-repeat:no-repeat;
+  background-position: 50% 0;
+  background-image:url('../images/logo.jpg'); }
+
+ .exCenter{
+    width:300px;
+    margin:auto;
+}
+.exHeader,#exContent,#exFooter{
+    background-color:#f1f1f1;
+    border:solid 1px #CCCCCC;
+    margin-bottom:2px;
+}
+.exLeftColumn{
+    float:left; 	
+    width:149px;
+    background-color:#00CCFF;
+}
+.exRightColumn{
+    float:right;
+    width:149px;
+    background-color:#CCCCCC;
+}
+.exClear{
+    clear:both;
+    line-height:0px;
+}

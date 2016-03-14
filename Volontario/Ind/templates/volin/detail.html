@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="top">
+    <center>  <h1>{{ volins.title }}</h1> </center>
+</div>
+
+<div id="content">
+
+
+<b style="color:#ccccff">Miejsce:</b>	<p>{{volins.destination}}</p>
+
+<b style="color:#ccccff">Szczegóły:</b>	<p>{{volins.description|safe|escape }}</p> 
+	<br>
+
+        <br>
+<a href=""><button  type="submit" style="vertical-align:middle">Dołącz</button></a> </p>
+<br>
+
+		
+   
+
+{% endblock %}
+

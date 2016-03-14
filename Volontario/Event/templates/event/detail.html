@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="top">
+    <center> <h1 style="color:#FFFFFF"> {{ events.title|capfirst  }}</h1></center>
+</div>
+<br>
+
+<div id="content">
+
+<b style="color:#FF6633">Data:</b>	{{events.date}}<br>
+<b style="color:#FF6633">Miejsce:</b>	{{events.destination}}<br>
+<b style="color:#FF6633">Godzina:</b>	{{events.time }}<br><br>
+<b style="color:#FF6633">Szczegóły:</b>	{{events.description|safe|escape  }}<br>
+	<br>
+
+        <br>
+<a href="{% url 'Event.views.event_user' pk=events.pk %}"><button  type="submit" style="vertical-align:middle">Dołącz</button></a> </p>
+
+
+<center><b> W wydarzeniu udział wezmą:</b> </center>
+{% for user in users %}
+<center>{{user.first_name}} {{user.last_name}}</center>
+<br>
+{% endfor %}
+		<b><center>  Zadania: </center></b>
+	<hr>
+
+{% if user.is_authenticated and request.user.is_superuser %} 
+ <p align="center"><a href="{% url 'Event.views.new_task' pk=events.pk%}"><button  type="submit" style="vertical-align:center">Dodaj nowe zadanie</button></a></p>
+{% endif %}
+
+</div>
+<div id = "content">
+{% for task in tasks %}
+
+	<div id="top"><center><b><h5 style="color:blue"> {{task.title}}</h5></b></center></div>
+	<p> {{task.description|safe|escape}}</p>
+
+{% if user.is_authenticated and request.user.is_superuser %} 
+<p align="right"><a href="{% url 'Event.views.task_remove' pk=events.pk task_id=task.id %}"><button type="submit" style="vertical-align:middle">Usuń</button></a>
+<a href=""><button  type="submit" style="vertical-align:middle">Dołącz</button></a> </p>
+{% else %}
+<p align="right"><a href=""><button  type="submit" style="vertical-align:middle">Dołącz</button></a> </p>
+{% endif %}
+
+<hr style="color:red"></hr>
+{% endfor %}
+
+   
+
+{% endblock %}
+

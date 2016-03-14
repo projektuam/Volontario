@@ -1,0 +1,140 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>System zarządzania Wolontariatem </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link href="{% static 'styl.css' %}" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+ 
+
+    <div class="container-fluid">
+    <!-- LOGOWANIE -->
+    <div class="well well-sm">
+          
+              
+              
+              {% if user.is_authenticated and request.user.is_superuser %} 
+<h6>Cześć {{user.username}} ! </h6> <a href = "{% url 'Users.views.user_logout' %}"><h6> Wyloguj się </h6></a> 
+{%else%}
+              
+            
+              <a href = "{% url 'Event.views.login_user' %}"><button type="submit" class="btn btn-primary">Zaloguj</button></a>
+              <a href = "{% url 'Users.views.register' %}"> <button type="submit" class="btn btn-primary">Dołącz do nas</button></a>
+{%endif%}
+
+          
+      </div>
+      <!-- Baner -->
+    <div class="row">
+  <center><img src="{% static 'images/logo.jpg' %}" class="img-responsive"></center>
+   </div>
+      <!-- Kod pełnego paska nawigacji -->
+      <div class="navbar navbar-default">
+          <div class="container-fluid">
+              <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar-content">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Volontario</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="mynavbar-content">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Strona główna</a></li>
+              <!-- Kod listy rozwijanej -->
+              <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dokumenty <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#">Zaświadczenia</a></li>
+                      <li><a href="#">Zwolnienia</a></li>
+                      <li><a href="#">Huje muje dzikie weze </a></li>
+                      
+                  </ul>
+              </li>
+
+              <li class="dropdown">
+              <a href="{% url 'Event.views.event_list' %}" class="dropdown-toggle" data-toggle="dropdown">Wydarzenia <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                  <li><a href="{% url 'Event.views.event_list' %}">Lista</a></li>
+                  <li><a href="{% url 'Event.views.event_new' %}">Dodaj</a></li>
+                    
+                    
+              </ul>
+              </li>
+
+               <li class="dropdown">
+              <a href="{% url 'Ind.views.volin_list' %}" class="dropdown-toggle" data-toggle="dropdown"> Indywidualny <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                     <li><a href="{% url 'Ind.views.volin_list' %}">Lista </a></li>
+                  <li><a href="{% url 'Ind.views.volin_new' %}">Dodaj </a></li>
+               
+                      
+              </ul>
+              </li>
+
+
+              <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"> Dokumenty <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                     <li><a href="{% url 'Documents.views.docs_list' %}">Dupa </a></li>
+                  <li><a href="{% url 'Documents.views.new' %}">Niedupa </a></li>
+               
+                      
+              </ul>
+              </li>
+              <li><a href="#">Wiadomości</a></li>
+              <li><a href="#">Administracja</a></li>
+
+            </ul>
+        </div>
+          </div>
+      </div>
+      <hr>
+
+
+  <!-- Panel -->
+
+<div class="Tekst">       
+          {% block content %}
+
+		
+          {% endblock content %}
+      </div>
+        
+    <div class="panel panel-default">
+        <div class="panel-heading">
+          UWAGA
+        </div>
+        <div class="panel-body">
+          To będzie strona dzięki której po tych latach na WMI(Wydział magi i Iluzji ) ukończymy studia  
+        </div>
+        <div class="panel-footer">
+          <a href="#" class="btn btn-danger btn-sm">Chcesz je ukończyć </a> <a href="#" class="btn btn-default btn-sm">Jebać, zostaje Ninja</a>
+        </div>
+    </div>
+    <hr>
+
+    
+  </div>
+      
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+  </body>
+</html>

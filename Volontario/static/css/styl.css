@@ -1,0 +1,32 @@
+.col1{
+	background: red;
+}
+.col2{
+	background: blue;
+}
+
+.col3{
+	background: orange;
+}
+
+.col4{
+
+	background: yellow;
+}
+
+.col5{
+
+	background: red;
+}
+
+.col6{
+
+	background: pink;
+
+}
+#logo {
+  position:relative;
+  height:312px; 
+  background-repeat:no-repeat;
+  background-position: 50% 0;
+  background-image:url('../images/logo.jpg'); }
