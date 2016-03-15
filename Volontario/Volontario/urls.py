@@ -9,4 +9,5 @@ url(r'^ind/', include('Ind.urls')),
 url(r'^summernote/', include('django_summernote.urls')),
 url(r'^reg/', include('Users.urls')),
 url(r'^doc/', include('Documents.urls')),
+url(r'^messege/', include('messege.urls')),
 ]

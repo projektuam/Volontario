@@ -47,7 +47,8 @@ INSTALLED_APPS = (
     'Ind',
     'Users',
     'django_summernote',
-    'Documents'
+    'Documents',
+    'messege',
     
     
     
