@@ -1,0 +1,18 @@
+{% extends 'event/index.html' %}
+
+
+{% block content %}
+	{% for task in tasks %}
+	<div id="tytul">
+      		<h3> {{ task.title }}</h3>
+                
+	</div>
+
+	<div id="tresc">
+     		<p>{{task.description}}</p>
+		</div>
+<hr>
+
+
+	{% endfor %}
+{% endblock content %}

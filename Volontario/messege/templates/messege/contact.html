@@ -1,0 +1,20 @@
+{%extends 'messege/index.html'%}
+
+{% block content%}
+	{% for messege in message %}
+
+	<div id = "Wiadomosći">
+		
+	Tytuł Wiadomości: {{messege.title}}
+	Text Wiadomości:  {{messege.text}}
+
+
+	</div>
+
+
+
+
+
+	{%endfor%}
+
+{% endblock content%}
