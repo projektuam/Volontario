@@ -7,7 +7,7 @@ class DocsForm(forms.ModelForm):
 
     class Meta:
        model = Docs
-       fields = ('date', 'place','text','sign1','title')
+       fields = ('place','date','title','text','sign1')
 
 class ZwolnieniaForm(forms.ModelForm):
 
