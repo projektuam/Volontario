@@ -1,6 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
+
+
+
+
 #Wolontariat indywidualny model
 
 class Volin(models.Model):
@@ -9,7 +13,7 @@ class Volin(models.Model):
     destination = models.CharField("Miejsce ", max_length=50, blank=True)
     description = models.TextField("Opis")
     publication_date = models.DateTimeField("Data publikacji", blank=True,null=True)
-    #users = models.ManyToManyField('auth.user',blank=True)
+    
     
     class Meta:
         ordering = ['-id']
@@ -21,5 +25,6 @@ class Volin(models.Model):
 
     def __str__(self):
         return self.title
+
 
 

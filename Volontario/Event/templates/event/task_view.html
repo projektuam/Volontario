@@ -1,0 +1,11 @@
+
+{% load staticfiles %}
+
+
+{% for user in users %}
+	{{user.first_name}} {{user.last_name}} <br>
+<center>{{user.first_name}} {{user.last_name}} <a href="{% url 'Event.views.user_remove_task' pk=events.pk usr=user.id task_id=tasks.id %}"><button type="submit" style="vertical-align:middle">Usuń</button></a>
+			</center> 
+
+
+{% endfor %}

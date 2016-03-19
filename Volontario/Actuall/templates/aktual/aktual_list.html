@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+	{% for new in news %}
+	<div id="top">
+      		 <center><h3> <a href="{% url 'Actuall.views.aktual_detal' pk=new.pk %}">{{ new.title|capfirst  }}</a></h3></center>  
+	</div>
+
+	<div id="content">
+    <b style="color:#ff6600"></b><p>{{new.description|safe|escape}}</p>
+    <b style="color:#ff6600">Autor:</b><p>{{new.author}}</p>
+
+{% if user.is_authenticated and request.user.is_superuser %}         
+<p align="right"><a href="{% url 'Actuall.views.aktual_edit' pk=new.pk %}"><button  type="submit" style="vertical-align:middle">Edytuj</button></a>
+<a href="{% url 'Actuall.views.aktual_remove' pk=new.pk %}"><button type="submit" style="vertical-align:middle">Usuń</button></a> </p>
+
+{% else %}
+{% endif %}
+
+
+</div>
+	<div id="bot"> <p align="right">Data dodania:<b>{{new.publication_date}}</b></p></div>
+<hr>
+
+	{% endfor %}
+{% endblock content %}

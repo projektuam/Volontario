@@ -5,19 +5,19 @@
 
 {% block content %}
 	{% for event in events %}
-	<div id="top">
-      		 <center><h3> <a href="{% url 'Event.views.event_detal' pk=event.pk %}">{{ event.title|capfirst  }}</a></h3></center>  
+	<div class="topp_l">
+      	<b>	 <a href="{% url 'Event.views.event_detal' pk=event.pk %}">{{ event.title|capfirst  }}</a></b>
 	</div>
-
-	<div id="content">
-    <b>Data:</b><p>{{event.date}}</p>
-    <b>Miejsce:</b><p>{{ event.destination}}</p>
-    <b>Godzina:</b><p>{{ event.time }}</p>
-	
+<br>
+	<div class="content"><center>
+    <b style="color:#006633">Data:</b>   {{event.date}}&nbsp &nbsp 
+    <b style="color:#006633">Miejsce:</b> {{ event.destination}}&nbsp &nbsp
+    <b style="color:#006633">Godzina:</b> {{ event.time }}&nbsp &nbsp
+	</center>
 
 {% if user.is_authenticated and request.user.is_superuser %}         
-<p align="right"><a href="{% url 'Event.views.event_edit' pk=event.pk %}"><button  type="submit" style="vertical-align:middle">Edytuj</button></a>
-<a href="{% url 'Event.views.event_remove' pk=event.pk %}"><button type="submit" style="vertical-align:middle">Usuń</button></a> </p>
+<p align="right"><a href="{% url 'Event.views.event_edit' pk=event.pk %}"><button  type="submit" class="btn btn-warning" dropdown-toggle>Edytuj</button></a>
+<a href="{% url 'Event.views.event_remove' pk=event.pk %}"><button type="submit" class="btn btn-danger">Usuń</button></a> </p>
 
 {% else %}
 {% endif %}

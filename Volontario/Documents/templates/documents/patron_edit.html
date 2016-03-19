@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>    
+
+    <form method="POST" class="docs-form">{% csrf_token %}
+
+<div align="right"> <font size="2">
+    <label for="{{form.DocsForm.place}}">Miejscowość: </label>
+    {{form.place}} &nbsp;
+    <label for="{{form.DocsForm.date}}">Data (RRRR-MM-DD): </label>
+    {{form.date}}</font>
+</div><br><br>
+
+<div align="right">
+<strong>
+    Szanowny Pan<br>
+    {{form.chart3}}<br>
+    {{form.chart4}}<br>
+    Uniwersytetu Adama Mickiewicza w Poznaniu<br><br>
+</strong>
+</div>
+
+
+
+<div align="left"><strong>
+    Szanowny Panie
+    <label for="{{form.DocsForm.date}}"></label>
+    {{form.chart}},
+</strong></div>
+    <br><br>
+
+<div class="Akapit1">
+    <p>
+    <strong>Wydziałowe Centrum Wolontariatu „VOLONTARIO”</strong> działąjące przy Wydziale Studiów Edukacyjnych Uniwersytetu im. Adama Mickiewicza organizuje<br>{{form.text2}}.
+    <br><br><strong>W związku z tym zwracamy się z uprzejmą prośbą do {{form.chart2}} o wsparcie naszej inicjatywy w formie dofinansowania. <br>
+
+    Bylibyśmy także bardzo zobowiązani, gdyby Pan Rektor zgodził się objąć Patronatem Honorowym nasz Rajd.
+    </strong><br><br>
+</div>
+<div class="Akapit2">    
+    {{form.text4}}<br>
+    
+    Prosimy o pozytywne rozpatrzenie naszej prośby.
+    </p>
+</div>
+<br>
+
+<div align="left">
+    <p>
+        &nbsp;        Z wyrazami szacunku
+    </p>
+</div>
+
+
+<br>
+<div class="Sign1">
+    <label for="{{form.DocsForm.sign1}}">Stanowisko: </label>
+    {{form.sign1}}
+
+    <label for="{{form.DocsForm.sign2}}">Podpis: </label>
+    {{form.sign2}}
+</div>
+
+<div class="Sign2">
+    <label for="{{form.DocsForm.sign3}}">Stanowisko: </label>
+    {{form.sign3}}
+
+    <label for="{{form.DocsForm.sign4}}">Podpis: </label>
+    {{form.sign4}}
+</div>
+
+        <button type="submit" class="save btn btn-default">Zapisz</button>
+    </form>
+</center>
+
+{% endblock %}

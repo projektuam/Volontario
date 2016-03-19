@@ -1,31 +1,17 @@
 from django import forms
 from django.forms import ModelForm, DateField
-from .models import Event
-from .models import Task
+from .models import Message
 from django.utils import timezone
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 
-class EventForm(forms.ModelForm):
+class MessageForm(forms.ModelForm):
 
     class Meta:
-       model = Event
-       fields = ('author', 'title','time','date','destination','description')
+       model = Message
+       fields = ('title','text')
        widgets = {
                  'description' : SummernoteWidget(),
            
-                                        
-               
-                 
                  }
-
-class TaskForm(forms.ModelForm):
-    class Meta:
-       model = Task
-       fields = ('title', 'description')
-       widgets = {
-                 'description' : SummernoteWidget(),
-                 }
-
-
 

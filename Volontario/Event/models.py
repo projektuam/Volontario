@@ -3,8 +3,11 @@ from django.utils import timezone
 from datetime import timedelta
 import datetime
 
+
+
+
 class Event(models.Model):
-    author = models.CharField("Autor",max_length=20)
+    author = models.CharField("Autor",max_length=20,default = "")
     title = models.CharField("Nazwa wydarzenia", max_length=100)
     time = models. TimeField("Godzina", auto_now=False)
     date = models.DateField("Data",auto_now=False)
@@ -19,7 +22,9 @@ class Event(models.Model):
     
     class Meta:
         ordering = ['-id']
-   
+    
+
+        
 
     def add_event(self):
         self.publication_date = timezone.now()
@@ -43,4 +48,6 @@ class Task(models.Model):
  
     def __str__(self):
         return self.title
+
+
 

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div id="top">
+    <center> <h1 style="color:#9999ff"> {{ news.title|capfirst  }}</h1></center>
+</div>
+<br>
+
+<div id="content">
+
+
+<b style="color:#FF6633"></b>	{{news.description|safe|escape  }}<br>
+	<br>
+
+        <br>
+
+
+		
+   
+
+{% endblock %}
+

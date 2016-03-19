@@ -4,11 +4,19 @@
 {% block content %}
 	{% for doc in docs %}
 	<hr>
-            {{doc.date}}<br>
-            {{doc.place}}<br>
-            {{doc.text}}<br>
-            {{doc.sign1}}<br>
-            {{doc.title}}
+			ZWOLNIENIE <br><br>
+
+           typ dokumentu: {{doc.form_type}}<br>
+           miejscowość: {{doc.place}},<br>
+           data: {{doc.date}},<br>
+           student: {{doc.text2}},<br>
+           data zwol: {{doc.chart}},<br>
+           godzina zwol: {{doc.chart2}},<br>
+           impreza: {{doc.text3}},<br>
+           stanow.1: {{doc.sign1}},<br>
+           podpis 1: {{doc.sign2}},<br>
+           stanow.2: {{doc.sign3}},<br>
+           podpis 2: {{doc.sign4}}
 <hr>
 	{% endfor %}
 {% endblock content %}

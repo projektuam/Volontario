@@ -9,7 +9,7 @@
     <title>System zarządzania Wolontariatem </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
     <link href="{% static 'styl.css' %}" rel="stylesheet">
-
+    <link href="{% static 'mati.css' %}" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -20,25 +20,36 @@
  
 
     <div class="container-fluid">
+
     <!-- LOGOWANIE -->
     <div class="well well-sm">
           
               
               
               {% if user.is_authenticated %}
-<h6>Cześć {{user.username}} ! </h6> <a href = "{% url 'Users.views.user_logout' %}"><h6> Wyloguj się </h6></a> 
+             <h8>Cześć <b>{{user.username}}</b> ! </h8> <a href = "{% url 'Users.views.user_logout' %}"> Wyloguj się</a> 
 {%else%}
               
             
-              <a href = "{% url 'Event.views.login_user' %}"><button type="submit" class="btn btn-primary">Zaloguj</button></a>
-              <a href = "{% url 'Users.views.register' %}"> <button type="submit" class="btn btn-primary">Dołącz do nas</button></a>
-{%endif%}
-
-          
+              <a href = "{% url 'Event.views.login_user' %}"><button type="submit" class="btn btn-primary btn-sm">Zaloguj</button></a>
+              <a href = "{% url 'Users.views.register' %}"> <button type="submit" class="btn btn-danger btn-sm">Dołącz do nas</button></a>
+{%endif%}   
+<center>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-success" {% endif %}>
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+        {{ message }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}   </center>  
       </div>
       <!-- Baner -->
     <div class="row">
   <center><img src="{% static 'images/logo.jpg' %}" class="img-responsive"></center>
+
    </div>
       <!-- Kod pełnego paska nawigacji -->
       <div class="navbar navbar-default">
@@ -49,13 +60,24 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Volontario</a>
+          <a class="navbar-brand" href="{% url 'Actuall.views.aktual_list' %}">Volontario </a>
         </div>
         
         <div class="collapse navbar-collapse" id="mynavbar-content">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Strona główna</a></li>
+             
               <!-- Kod listy rozwijanej -->
+
+                <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown">Aktualności <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                  <li><a href="{% url 'Actuall.views.aktual_list' %}">Lista</a></li>
+                  <li><a href="{% url 'Actuall.views.aktual_new' %}">Dodaj</a></li>
+                    
+                    
+              </ul>
+              </li>
 
               <li class="dropdown">
               <a href="{% url 'Event.views.event_list' %}" class="dropdown-toggle" data-toggle="dropdown">Wydarzenia <b class="caret"></b></a>
@@ -84,20 +106,14 @@
               <a href="" class="dropdown-toggle" data-toggle="dropdown"> Dokumenty <b class="caret"></b></a>
                   <ul class="dropdown-menu">
 
-                     <li><a href="{% url 'Documents.views.docs_list' %}">Lista </a></li>
-                  <li><a href="{% url 'Documents.views.new' %}">Dodaj </a></li>
+                 <li><a href="{% url 'Documents.views.docs_list' %}">Lista </a></li>
+                  <li><a href="{% url 'Documents.views.zwolnienie_new' %}">Zwolnienie indywidualne </a></li>
+                  <li><a href="{% url 'Documents.views.patron_new' %}">Prośba o patronat </a></li>
                
                       
               </ul>
               </li>
-              <li><a href="{% url 'messege.views.messege_list' %}">Wiadomości</a></li>
-
-
-
-
-
-
-
+              <li><a href="#">Wiadomości</a></li>
               <li><a href="#">Administracja</a></li>
 
             </ul>
@@ -107,8 +123,6 @@
       <hr>
 
 
-  <!-- Panel -->
-
 <div class="Tekst">       
           {% block content %}
 
@@ -116,18 +130,7 @@
           {% endblock content %}
       </div>
         
-    <div class="panel panel-default">
-        <div class="panel-heading">
-          UWAGA
-        </div>
-        <div class="panel-body">
-          To będzie strona dzięki której po tych latach na WMI(Wydział magi i Iluzji ) ukończymy studia  
-        </div>
-        <div class="panel-footer">
-          <a href="#" class="btn btn-danger btn-sm">Chcesz je ukończyć </a> <a href="#" class="btn btn-default btn-sm">Jebać, zostaje Ninja</a>
-        </div>
-    </div>
-    <hr>
+   
 
     
   </div>

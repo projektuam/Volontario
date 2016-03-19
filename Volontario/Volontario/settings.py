@@ -48,7 +48,7 @@ INSTALLED_APPS = (
     'Users',
     'django_summernote',
     'Documents',
-    'messege',
+    'Actuall',
     
     
     
@@ -101,7 +101,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'pl_PL'
+LANGUAGE_CODE = 'pl'
 
 TIME_ZONE = 'Europe/Warsaw'
 

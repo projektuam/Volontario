@@ -2,15 +2,61 @@
 
 {% block content %}
 
+<div class = "Rejestracja">
+
    <div id="top"><h1 style="color:blue">Rejestracja</h1><br> <br></div>
     <form method="POST" class="user-form">
 
 <form method="POST" action=".">{% csrf_token %}
-        <table border="0">
-            {{ form.as_p }}
-        </table>
+
+
+<div class="Username">
+    <h8>
+    <label for="{{ form.RegistrationForm.username}}">Autor:</label> 
+    {{ form.username }}</h4>
+</div>
+
+<div class="Password">
+    <h8>
+    <label for="{{ form.RegistrationForm.password1}">Hasło:</label> 
+    {{ form.password1 }}</h4>
+
+ <div class ="Password2"  
+    <h8>
+    <label for="{{ form.RegistrationForm.password2}}">Powtórz hasło:</label> 
+    {{ form.password2 }}</h4>
+</div>
+
+<div class="imie i nazwisko">
+    <h8>
+    <label for="{{ form.RegistrationForm.first_name}}">Imię:</label> 
+    {{ form.first_name}}</h4>
+
+
+    <h8>
+    <label for="{{ form.RegistrationForm.last_name}}">Nazwisko:</label> 
+    {{ form.last_name}}</h4>
+</div>
+<div class="email">
+    <h8>
+    <label for="{{ form.RegistrationForm.email}}">Email:</label> 
+    {{ form.email }}</h4>
+</div>
+<div class="Tel">
+    <h8>
+    <label for="{{ form.RegistrationForm.tel}}">Telefon:</label> 
+    {{ form.tel }}</h4>
+</div>
+<div class="Indeks">
+    <h8>
+    <label for="{{ form.RegistrationForm.indeks}}">Indeks:*</label> 
+    {{ form.indeks }}</h4>
+</div>
+
+Pole z gwiastką nie jest wymagane. 
         <input type="submit" value="Register" />
     
     </form>
+    </div>
 {% endblock %}
 

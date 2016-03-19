@@ -4,6 +4,7 @@ from .models import Event
 from .models import Task
 from django.utils import timezone
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
+from django.contrib.admin.widgets import AdminDateWidget
 
 
 class EventForm(forms.ModelForm):
@@ -13,12 +14,17 @@ class EventForm(forms.ModelForm):
        fields = ('author', 'title','time','date','destination','description')
        widgets = {
                  'description' : SummernoteWidget(),
+                 'date' : AdminDateWidget(),
            
                                         
                
                  
                  }
-
+       class Media:
+           css = {
+               'all': ('layout.css',)
+                 }
+ 
 class TaskForm(forms.ModelForm):
     class Meta:
        model = Task

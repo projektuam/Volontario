@@ -3,22 +3,28 @@
 {% block content %}
 
 <div id="top">
-    <center>  <h1>{{ volins.title }}</h1> </center>
+    <center>  <h1 style="color:#9999ff" >{{ volins.title }}</h1> </center>
 </div>
 
 <div id="content">
 
 
-<b style="color:#ccccff">Miejsce:</b>	<p>{{volins.destination}}</p>
+<b style="color:#ff9933">Miejsce:</b>	<p>{{volins.destination}}</p>
 
-<b style="color:#ccccff">Szczegóły:</b>	<p>{{volins.description|safe|escape }}</p> 
+<b style="color:#ff9933">Szczegóły:</b>	<p>{{volins.description|safe|escape }}</p> 
 	<br>
 
         <br>
-<a href=""><button  type="submit" style="vertical-align:middle">Dołącz</button></a> </p>
+<p align="center"><a href="{% url 'Ind.views.volin_user' pk=volins.pk%}"><button  type="submit" style="vertical-align:middle color:#00ccff" >Chcę dołączyć</button></a> </p>
 <br>
 
-		
+<br>
+<hr>
+<b> Zainteresowani: </b>
+{% for user in users %}
+<center>{{user.first_name}} {{user.last_name}} <a href="{% url 'Ind.views.user_remove' pk=volins.pk usr=user.id%}"><button type="submit" style="vertical-align:middle">Usuń</button></a></center> 
+<br>
+{% endfor %}		
    
 
 {% endblock %}

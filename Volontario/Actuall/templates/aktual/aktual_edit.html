@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<center>
+   <div id="top"><h1 style="color:#ff9933">Nowe</h1><br> <br></div>
+    <form method="POST" class="aktual-form">{% csrf_token %} 
+      
+<div class="Autor">
+    <h4 style="color:#9999ff">
+    <label for="{{ form.AktualForm.author }}">Autor:</label><br>
+    {{ form.author }}</h4>
+</div>
+
+<div class="Title">
+    <h4 style="color:#9999ff">
+    <label for="{{ form.AktualForm.title }}">Tytuł:</label><br>
+    {{ form.title }}</h4>
+</div>
+<div class="Opis">
+    <h4 style="color:#9999ff">
+    <label for="{{ form.AktualForm.description }}">Szczegóły:</label><br>
+    {{ form.description }} </h4>
+</div>
+<br>
+        <div><p align="center"><button type="submit" style="font: 15pt Arial; font-style: italic; font-weight: bold; color:#663366;vertical-align:middle;width:200px; height:50px"class="save btn btn-default" >Zapisz</button></p></div>
+    </form></center>
+{% endblock %}
+

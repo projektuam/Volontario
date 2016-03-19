@@ -4,12 +4,7 @@ from . import views
 
 
 urlpatterns = patterns ('Documents.views',
-(r'^new$', 'new'),
+(r'^zwolnienie_new$', 'zwolnienie_new'),
 (r'^$', 'docs_list'),
-(r'^zwolnienie$', 'zwolnienie'),
-
+(r'^patron_new$', 'patron_new'),
 )
-
-
-
-

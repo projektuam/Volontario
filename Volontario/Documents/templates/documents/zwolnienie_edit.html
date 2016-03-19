@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<center>    
+
+    <form method="POST" class="docs-form">{% csrf_token %}
+    
+<!--div class="Title">
+    <label for="{{form.DocsForm.title}}">Tytuł: </label>
+    {{form.title}}
+</div-->
+
+<div align="right"> <font size="2">
+    <label for="{{form.DocsForm.place}}">Miejscowość: </label>
+    {{form.place}} &nbsp;
+    <label for="{{form.DocsForm.date}}">Data (RRRR-MM-DD): </label>
+    {{form.date}}</font>
+</div><br><br>
+
+<b>USPRAWIEDLIWIENIE</b><br> <br>
+
+<div class="Akapit1">
+    <p>
+        Zwracam się z uprzejmą prośbą o usprawiedliwienie nieobecności Pana(-i)<br>
+        <label for="{{form.DocsForm.chart3}}"></label>
+        {{form.chart3}},<br>
+        <label for="{{form.DocsForm.text2}}"></label>
+        {{form.text2}},<br>
+        
+        na zajęciach w dniu
+        <label for="{{form.DocsForm.chart}}"></label>
+        {{form.chart}},
+        
+        w godz.
+        <label for="{{form.DocsForm.chart2}}"></label>
+        {{form.chart2}}
+    </p>
+</div>
+<br>
+<div class="Akapit2">
+    <p>
+        Powodem nieobecności był aktywny udział Wolontariuszszki(-sza) w organizacji
+        <label for="{{form.DocsForm.text3}}"></label>
+        <br>{{form.text3}}<br>
+        w ramach działań Wydziałowego Centrum Wolontariatu VOLONTARIO WSE UAM. 
+        <br><br>
+
+    </p>
+</div>
+<br>
+<div align="left">
+    <p>
+        &nbsp;        Z wyrazami szacunku
+    </p>
+</div>
+
+
+<br>
+<div class="Sign1">
+    <label for="{{form.DocsForm.sign1}}">Stanowisko: </label>
+    {{form.sign1}}
+
+    <label for="{{form.DocsForm.sign2}}">Podpis: </label>
+    {{form.sign2}}
+</div>
+
+<div class="Sign2">
+    <label for="{{form.DocsForm.sign3}}">Stanowisko: </label>
+    {{form.sign3}}
+
+    <label for="{{form.DocsForm.sign4}}">Podpis: </label>
+    {{form.sign4}}
+</div>
+
+        <button type="submit" class="save btn btn-default">Zapisz</button>
+    </form>
+</center>
+
+{% endblock %}
