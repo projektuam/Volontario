@@ -9,6 +9,7 @@
     <title>System zarządzania Wolontariatem </title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
     <link href="{% static 'styl.css' %}" rel="stylesheet">
+    <link href="{% static 'mati.css' %}" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -26,7 +27,7 @@
               
               
               {% if user.is_authenticated %}
-             <h8>Cześć <b>{{user.username}}</b> ! </h8> <a href = "{% url 'Users.views.user_logout' %}"> Wyloguj się</a> 
+             <h8>Cześć <b>{{user.username}}</b> ! </h8> <a href = "{% url 'Users.views.user_logout' %}"> Wyloguj się</a>  <a href="{% url 'reset_password_reset1' %}">Zapomniałeś hasła?</a>
 {%else%}
               
             
@@ -37,7 +38,7 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="alert alert-success" {% endif %}>
+    <li{% if message.tags %} class="alert-sm alert-success" {% endif %}>
         {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
         {{ message }}
     </li>
@@ -111,9 +112,17 @@
                
                       
               </ul>
+              
               </li>
               <li><a href="#">Wiadomości</a></li>
-              <li><a href="#">Administracja</a></li>
+             {% if user.is_authenticated %}
+              <li class="dropdown">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"> Konto <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+
+                 <li><a href="{% url 'Users.views.user_account' %}">Moje konto</a></li>
+                  <li><a href="{% url 'Users.views.user_list' %}">Zarządzanie kontami</a></li>
+                 {% endif %}
 
             </ul>
         </div>

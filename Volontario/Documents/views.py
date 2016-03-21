@@ -158,7 +158,7 @@ def patron_generate(request, pk):
     return response
 ###########################################################################################################
 def docs_remove(request, pk):
-    docs = get_object_or_404(Docs,pk=pk)
+    docs = get_object_or_404(Docs,id=pk)
     docs.delete()
     return redirect('Documents.views.docs_list')
 ###########################################################################################################
@@ -180,5 +180,13 @@ def docs_generate(request, pk):
 ##########################################################################################################
 def docs_list(request):
     docs = Docs.objects.all
-    return render(request, 'documents/docs_list.html', {'docs':docs})
+    users = User.objects.all()
+    return render(request, 'documents/docs_list.html', {'docs':docs,'users':users})
 ###########################################################################################################
+# def user_list(request):
+#     users = User.objects.all()
+#     return render(request, 'documents/docs_list.html', {'users':users})
+
+
+
+

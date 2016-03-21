@@ -5,120 +5,85 @@
 {% block content %}
 
 <div class="topp">
-    <b style="color:#000033"> {{ events.title }} </b>
+     <b style="color:#000033"> {{ events.title }} </b>
      <br>
 </div>
 
-<!-- Nazwa eventu -- >
-
-
-
 <br>
-
 
 <!--        Szczegóły eventu                                             -->
+<div class="site">
+	<div class="content-left-up">
 
-<div class="content-up">
-<div class="content-left-up">
-
-<b style="color:#FF6633">Data:</b>	{{events.date}}<br>
-<b style="color:#FF6633">Miejsce:</b>	{{events.destination}}<br>
-<b style="color:#FF6633">Godzina:</b>	{{events.time }}<br><br>
-<b style="color:#FF6633">Szczegóły:</b>	{{events.description|safe|escape  }}<br>
+	<b style="color:#FF6633">Data:</b>	{{events.date}}<br>
+	<b style="color:#FF6633">Miejsce:</b>	{{events.destination}}<br>
+	<b style="color:#FF6633">Godzina:</b>	{{events.time }}<br><br>
+	<b style="color:#FF6633">Szczegóły:</b>	{{events.description|safe|escape  }}<br>
 	<br>
-
-    <br>
-<font size="5"><b style="color:#FF6633" ><center>  Zadania: </center></b></font>
-{% if user.is_authenticated and request.user.is_superuser %} 
+	<br>
+    {% if user.is_authenticated and request.user.is_superuser %} 
 		 <p align="center"><a href="{% url 'Event.views.new_task' pk=events.pk%}"><button  type="submit" class="btn btn-success">Dodaj nowe zadanie</button></a></p>
-{% endif %}
+	{% endif %}
+	<font size="5"><b style="color:#FF6633" ><center>  Zadania: </center></b></font>
+	</div>
 
- </div>
- 
-
-                    <!-- Dołącz do wydarzenia -->
-<div class="content-right-up">
-
-
-
-
-<p align="center"> <b> W wydarzeniu udział wezmą:</b> </p>
-
-		{% for user in users %}
-			
-
-			<center>{{user.first_name}} {{user.last_name}} <a href="{% url 'Event.views.user_remove' pk=events.pk usr=user.id %}"><button type="submit" class="btn-sm btn-danger">Usuń</button></a>
-			</center> 
-<br>
+	   <!-- Dołącz do wydarzenia -->
+	<div class="content-right-up">
+    	<div class="panel panel-warning class">
+        	<div class="panel-heading" style="background-color: #FFCC66">W wydarzeniu udział wezmą:</div>
+      	 {% for user in users %}
+         <div class="panel-body"><center>{{user.first_name}} {{user.last_name}} <a href="{% url 'Event.views.user_remove' pk=events.pk usr=user.id %}"><button type="submit" class="btn-sm btn-danger">Usuń</button></a>
+		</center> </div>
+		<br>
 		{% endfor %}
 		<p align="center"><a href="{% url 'Event.views.event_user' pk=events.pk%}"><button  type="submit" class="btn btn-primary" >Dołącz do wydarzenia</button></a> </p>
 
+		<br>
+
+		<div class="panel panel-warning class">
+      		<div class="panel-heading" style="background-color: #FFCC66">W zadaniu <b style="color:#FF6633">{{task1.title}} </b> udział wezmą: </div>
+
+       		{%for user in users1 %}
+       		 <div class="panel-body"> <p align="center">{{user.first_name}} {{user.last_name}} <a href="{% url 'Event.views.user_remove_task' pk=events.pk usr=user.id tk=task1.id %}"> Usuń </a> </p>
+            {% endfor %}
+             </div>
+        </div>
+		<br>
+		</div>
+	</div>
 
 
-<br>
-<br>
-
-</div>
-</div>
-	
 <!-- ##################### Zadania #########################-->
-<div class="content-down">
 
-<div class = "content-left-down">
+	<div class = "content-left-down">
+		{% for taski in tasks %}
+ 		<div class="panel panel-success class">
+      		<div class="panel-heading" style="background-color: #FFCC66"><center><b> {{taski.title}}</b></center></div>
 
-{% for taski in tasks %}
+      		<div class="panel-body"> <p> {{taski.description|safe|escape}}</p>
+      		<br>
+			{% if user.is_authenticated and request.user.is_superuser %} 
+			<p align="right"><a href="{% url 'Event.views.task_remove' pk=events.pk task_id=taski.id %}"><button type="submit" class="btn btn-danger">Usuń zadanie</button></a>
+ 			</p> 
 
-		<center><b><h5 style="color:#cc0033"> {{taski.title}}</h5></b></center>
-    
-    <div ="description-task"
-	
-		<p> {{taski.description|safe|escape}}</p>
-    
+			<p align="right"><a href="{% url 'Event.views.user_task' pk=events.pk task_id=taski.id %}"><button  type="submit" class="btn btn-success" >Chcę wykonać to zadanie</button></a> </p>
+			<p align="right">
+			<a href="{% url 'Event.views.user_view' pk=events.pk task_id=taski.id %}">  <button  type="submit" class="btn btn-primary" >Pokaż użytkowników</button></a></p>
+			{% else %}
+
+			{% endif %}
+			</div>
+		{% endfor %}
+		 </div>
+	</div>
+
+	<!-- ######################## PRAWY PANEL DOLNY -->
+	<div class= "content-right-down">
+		
     </div>
-	
-	<br>
-{% if user.is_authenticated and request.user.is_superuser %} 
-<p align="right"><a href="{% url 'Event.views.task_remove' pk=events.pk task_id=taski.id %}"><button type="submit" class="btn btn-danger">Usuń zadanie</button></a>
- </p> 
-
-<p align="right"><a href="{% url 'Event.views.user_task' pk=events.pk task_id=taski.id %}"><button  type="submit" class="btn btn-success" >Chcę wykonać to zadanie</button></a> </p>
-<p align="right">
-<a href="{% url 'Event.views.user_view' pk=events.pk task_id=taski.id %}">  
-<button  type="submit" class="btn btn-primary" >Pokaż użytkowników</button></a></p>
-
-{% else %}
-
-{% endif %}
-{% endfor %}
-
-</div>
-<!-- ######################## PRAWY PANEL DOLNY -->
 
 
-
-<div class= "content-right-down">
-
-	
-<p align="center">
-	  W zadaniu <b style="color:#FF6633">{{task1.title}} </b> udział wezmą: 
-    </p>
-  
-   
-<br>
- {%for user in users1 %}
-        <p align="center"> {{user.first_name}} {{user.last_name}} <a href="{% url 'Event.views.user_remove_task' pk=events.pk usr=user.id tk=task1.id %}"> Usuń </a> </p>
-       {% endfor %}
-      </p>
-<br> 
-
-
-
-
-</div>
-
-</div>
-
- 
 
 {% endblock %}
+
 

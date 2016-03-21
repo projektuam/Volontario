@@ -28,3 +28,13 @@ class RegistrationForm(forms.Form):
             if self.cleaned_data['password1'] != self.cleaned_data['password2']:
                 raise forms.ValidationError(_("The two password fields did not match."))
         return self.cleaned_data
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = {'first_name','last_name','email','tel','indeks','is_staff','is_active'}
+        widgets = {
+        'is_staff' : forms.CheckboxInput,
+        'is_active': forms.CheckboxInput,
+
+        }

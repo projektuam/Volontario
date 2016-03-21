@@ -2,30 +2,15 @@
 
 {% block content %}
 
-<div class = "Rejestracja">
+<div class = "Edycja">
 
-   <div id="top"><h1 style="color:blue">Rejestracja</h1><br> <br></div>
+   <div id="top"><h1 style="color:blue">Zmiana danych:</h1><br> <br></div>
     <form method="POST" class="user-form">
 
 <form method="POST" action=".">{% csrf_token %}
 
 
-<div class="Username">
-    
-    <label for="{{ form.RegistrationForm.username}}">Login:</label> 
-    {{ form.username }}</h4>
-</div>
 
-<div class="Password">
-    {{ form.password.errors }}
-    <label for="{{ form.RegistrationForm.password1}">Hasło:</label> 
-    {{ form.password1 }}</h4>
-
- <div class ="Password2"  
-    
-    <label for="{{ form.RegistrationForm.password2}}">Powtórz hasło:</label> 
-    {{ form.password2 }}</h4>
-</div>
 
 <div class="imie i nazwisko">
     <h8>
@@ -52,12 +37,19 @@
     <label for="{{ form.RegistrationForm.indeks}}">Indeks:*</label> 
     {{ form.indeks }}</h4>
 </div>
+<div class="Admin">
+    <h8>
+    <label for="{{ form.RegistrationForm.is_staff}}">Administrator:</label> 
+    {{ form.is_staff}}</h4>
+</div>
+<div class="Aktywny">
+    <h8>
+    <label for="{{ form.RegistrationForm.is_active}}">Konto aktywne:</label> 
+    {{ form.is_active}}</h4>
+</div>
 
-Pole z gwiazdką nie jest wymagane. 
-        <input type="submit" value="Dołącz" />
+        <input type="submit" value="Edytuj" />
     
     </form>
     </div>
-
 {% endblock %}
-

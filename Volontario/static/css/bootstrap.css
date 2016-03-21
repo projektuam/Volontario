@@ -11,10 +11,10 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
-
+ 
   background-color: #007FFF;
 
-
+ 
 }
 article,
 aside,
@@ -289,7 +289,7 @@ background: -ms-linear-gradient(45deg, rgba(111,179,211,1) 0%, rgba(111,179,211,
 background: linear-gradient(45deg, rgba(111,179,211,1) 0%, rgba(111,179,211,1) 9%, rgba(61,138,174,1) 19%, rgba(73,149,185,1) 24%, rgba(87,163,199,1) 30%, rgba(75,151,187,1) 38%, rgba(61,138,174,1) 47%, rgba(61,138,174,1) 47%, rgba(87,163,199,1) 59%, rgba(87,163,199,1) 64%, rgba(87,163,199,1) 67%, rgba(87,163,199,1) 74%, rgba(87,163,199,1) 77%, rgba(61,138,174,1) 84%, rgba(87,163,199,1) 91%, rgba(87,163,199,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fb3d3', endColorstr='#57a3c7', GradientType=1 );
    margin: 5px 100px 0px 100px ;
-
+  
 }
 input,
 button,
@@ -767,7 +767,6 @@ pre code {
   }
 }
 .container-fluid {
-  width: 1004px;
   padding-right: 15px;
   padding-left: 15px;
   margin: auto;
@@ -776,6 +775,7 @@ pre code {
 .row {
   margin-right: -0px;
   margin-left: -0px;
+  margin-bottom: 14px;
   height: 170px;
 
 }
@@ -4991,11 +4991,13 @@ a.list-group-item-danger.active:focus {
 }
 .panel-primary {
   border-color: #428bca;
+  font-size: 20px;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #428bca;
+  background-color:  #F84F00; 
   border-color: #428bca;
+  font-size: 30px;
 }
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
   border-top-color: #428bca;
@@ -5003,6 +5005,7 @@ a.list-group-item-danger.active:focus {
 .panel-primary > .panel-footer + .panel-collapse .panel-body {
   border-bottom-color: #428bca;
 }
+
 .panel-success {
   border-color: #d6e9c6;
 }
@@ -5033,6 +5036,9 @@ a.list-group-item-danger.active:focus {
 }
 .panel-warning {
   border-color: #faebcc;
+  margin-bottom: 20px;
+  min-height: 150pt;
+  background-color: B0D8FF;
 }
 .panel-warning > .panel-heading {
   color: #8a6d3b;

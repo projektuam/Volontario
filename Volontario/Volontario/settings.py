@@ -32,7 +32,12 @@ SECRET_KEY = 'ezl&a66(j=f_gpzef(z7doh0y4y1j35gyf2so0ce@*vr2n2cb%'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'uamvolontariouam@gmail.com'
+EMAIL_HOST_PASSWORD = 'maslo111'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Application definition
 

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<dif class="account">
+
+
+
+	<div class="panel panel-primary">
+      <div class="panel-heading"> <center>{{user.first_name}} {{user.last_name}}</center></div>
+      <div class="panel-body">
+      <br><b> email:</b> {{user.email}}
+      <br><b>Telefon:</b> {{user.tel}} 
+      <br><b> Numer indeksu:</b> {{user.indeks}} 
+  		<p align="right">
+		<a href=""><button  type="submit" class="btn btn-success">Zmień hasło</button></a></p>
+
+      </div>
+
+    </div>
+
+
+</dif>
+
+
+{% endblock %}

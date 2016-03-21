@@ -13,9 +13,7 @@ class Event(models.Model):
     date = models.DateField("Data",auto_now=False)
     destination = models.CharField("Miejsce ", max_length=50, blank=True)
     description = models.TextField("Opis")
-    #tasks = models.ForeignKey(Task,blank=True,null=True, on_delete=models.CASCADE)
     publication_date = models.DateTimeField("Data publikacji", blank=True,null=True)
-    #attach = models.FieldFile()
     #image = models.ImageField(upload_to=None, height_field=50, width_field=50)
     
   

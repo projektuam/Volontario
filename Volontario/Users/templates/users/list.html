@@ -1,0 +1,45 @@
+ 
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="left-admin">
+	<div class="dropdown">
+ 	 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Lista użytkowników
+    <span class="caret"></span>
+  	</button>
+ 	 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+ 	 {% for user in users  %}
+    <li><a href="{% url 'Users.views.setting_account' usr=user.id %}">{{user.first_name}} {{user.last_name}}</a></li>
+    {% endfor %}
+  	</ul>
+
+	</div>
+</div>
+<br><br>
+<div class="right-admin">
+	<div class="panel panel-primary">
+      <div class="panel-heading"> <center>{{cur_user.first_name}} {{cur_user.last_name}}</center></div>
+      <div class="panel-body">
+      <br><b> email:</b> {{cur_user.email}}
+      <br><b>Telefon:</b> {{cur_user.tel}} 
+      <br><b> Numer indeksu:</b> {{cur_user.indeks}} 
+      <br><b>Administrator:</b> {% if cur_user.is_superuser == True %} TAK {% else %} NIE {% endif %}
+      <br><b>Konto aktywne:</b> {% if cur_user.is_active == True %} TAK {% else %} NIE {% endif %}
+  		{% if cur_user %}
+      <p align="right"><a href="{% url 'Users.views.user_edit' usr=cur_user.id %}"><button  type="submit" class="btn btn-success">Edytuj dane</button></a>
+		<a href=""><button  type="submit" class="btn btn-success">Zmień hasło</button></a>
+		<a href="{% url 'Users.views.user_remove' usr=cur_user.id %}"><button  type="submit" class="btn btn-danger">Usuń konto</button></a></p>
+    {%endif%}
+
+      </div>
+
+    </div>
+
+</div>
+
+
+
+
+{% endblock %}
+

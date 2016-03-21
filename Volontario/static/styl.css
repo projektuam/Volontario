@@ -26,7 +26,7 @@
 }
 .logo {
   position:relative;
-  height:312px;
+  height:312px; 
   background-repeat:no-repeat;
   background-position: 50% 0;
   background-image:url('../images/logo.jpg'); }
@@ -41,7 +41,7 @@
     margin-bottom:2px;
 }
 .exLeftColumn{
-    float:left;
+    float:left; 	
     width:149px;
     background-color:#00CCFF;
 }
@@ -102,7 +102,7 @@ event{
 
 }
 .topp {
-width: 100%;
+width: 100%; 
 margin-top: 30px;
 background-color:linear-gradient(yellow, orange);
 background: linear-gradient(yellow, orange);
@@ -113,7 +113,7 @@ font-color:white;
 border-radius: 12px;
 }
 .topp_l {
-width: 100%;
+width: 100%; 
 margin-top: 30px;
 background-color:linear-gradient(yellow, orange);
 background: linear-gradient(yellow, orange);
@@ -162,9 +162,6 @@ min-height: 250pt;
    padding : 0px;
    float : right;
 }
-
-
-
 
 .topp2 {
 width: 100%;

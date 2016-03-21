@@ -26,6 +26,10 @@
           <a href="{% url 'Documents.views.docs_edit' pk=doc.id %}"><button type="submit" class="btn btn-danger">Edytuj</button></a>
 
           <a href="{% url 'Documents.views.docs_generate' pk=doc.id %}"><button type="submit" class="btn btn-danger">Generuj</button></a>
+
+          {% for user in users %}
+          {{user.first_name}}
+          {% endfor %}
           </p>
     </center>
 <hr>
