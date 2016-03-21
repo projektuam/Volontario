@@ -26,7 +26,7 @@
 }
 .logo {
   position:relative;
-  height:312px; 
+  height:312px;
   background-repeat:no-repeat;
   background-position: 50% 0;
   background-image:url('../images/logo.jpg'); }
@@ -41,7 +41,7 @@
     margin-bottom:2px;
 }
 .exLeftColumn{
-    float:left; 	
+    float:left;
     width:149px;
     background-color:#00CCFF;
 }
@@ -60,77 +60,81 @@ event{
 
 
 .content-left-up{
-   width: 800pt;
+   width: 70%;
    height:auto;
    min-height: 250pt;
-   background-color:white;
-   position: relative;   
-   float: left;
-   overflow: auto;
-
+   background-color: B0D8FF;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : left;
+   border-radius: 6px;
 }
 .content-right-up{
-   width: 297pt;
-   min-height: 250pt;
-   background-color:white;
-   position: relative;   
-   margin: 0px 0px 0px 0px;
-   float: right;
-   overflow: auto;
+   width: 30%;
+   min-height: 0pt;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : right;
+   border-radius: 6px;
 }
 .content-left-down{
-   width: 800pt;
+   width: 70%;
    min-height: 300pt;
-   background-color:white;
-   margin: 0px 0px 0px 0px
-   position: relative;   
-   float: left;
-   overflow: auto;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : left;
+   border-radius: 6px 6px 24px 24px;
 
 
 }
 .content-right-down{
-   width: 297pt;
-   min-height: 300pt;
-   margin:0px,0px,0px,0px;
-   background-color:white;
-   position: relative;  
-   float: left;
-   overflow: auto;
+   width: 30%;
+   min-height: 0pt;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : right;
+   border-radius: 6px;
 
 
 }
 .topp {
-width: 1097pt; 
+width: 100%;
 margin-top: 30px;
-background-color:#6699CC;
-background: #6699CC;
+background-color:linear-gradient(yellow, orange);
+background: linear-gradient(yellow, orange);
 font-size: 25px;
 text-shadow: 10px;
 text-align: center;
 font-color:white;
+border-radius: 12px;
 }
 .topp_l {
-width: 1097pt; 
+width: 100%;
 margin-top: 30px;
 background-color:linear-gradient(yellow, orange);
 background: linear-gradient(yellow, orange);
 font-size: 20px;
 text-shadow: 10px;
 text-align: center;
+border-radius: 24px;
 }
 b{
   color:#000066;
 }
 
 .content-down{
-width: 1097pt;
+width: 100%;
 margin:0px,0px,0px,0px;
-min-height: 200pt;
+min-height: 250pt;
+
 
 }
-.content-up{
-width: 1097pt;
+.site{
+width: 100%;
 margin:0px,0px,0px,0px;
 min-height: 250pt;
 
@@ -138,4 +142,43 @@ min-height: 250pt;
 .content{
   font-size: 18pt;
 
+}
+.account{
+
+}
+.left-admin{
+  width:20%;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : left;
+
+}
+
+.right-admin{
+  width:80%;
+   margin  : 0px;
+   border  : none;
+   padding : 0px;
+   float : right;
+}
+
+
+
+
+.topp2 {
+width: 100%;
+margin-top: 30px;
+background-color:linear-gradient(green, yellowgreen);
+background: linear-gradient(green, yellowgreen);
+font-size: 25px;
+text-shadow: 10px;
+text-align: center;
+font-color:white;
+border-radius: 12px;
+}
+
+.doc_font{
+font-size: 22px;
+font-style: Verdana;
 }

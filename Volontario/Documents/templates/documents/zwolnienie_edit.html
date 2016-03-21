@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<center>    
+<center>
 
     <form method="POST" class="docs-form">{% csrf_token %}
-    
+
 <!--div class="Title">
     <label for="{{form.DocsForm.title}}">Tytuł: </label>
     {{form.title}}
@@ -26,11 +26,11 @@
         {{form.chart3}},<br>
         <label for="{{form.DocsForm.text2}}"></label>
         {{form.text2}},<br>
-        
+
         na zajęciach w dniu
         <label for="{{form.DocsForm.chart}}"></label>
         {{form.chart}},
-        
+
         w godz.
         <label for="{{form.DocsForm.chart2}}"></label>
         {{form.chart2}}
@@ -42,7 +42,7 @@
         Powodem nieobecności był aktywny udział Wolontariuszszki(-sza) w organizacji
         <label for="{{form.DocsForm.text3}}"></label>
         <br>{{form.text3}}<br>
-        w ramach działań Wydziałowego Centrum Wolontariatu VOLONTARIO WSE UAM. 
+        w ramach działań Wydziałowego Centrum Wolontariatu VOLONTARIO WSE UAM.
         <br><br>
 
     </p>
@@ -72,8 +72,12 @@
     {{form.sign4}}
 </div>
 
-        <button type="submit" class="save btn btn-default">Zapisz</button>
+        <button type="submit" class="save btn btn-default">Generuj i zapisz</button>
     </form>
+
+    <a href="{% url 'Documents.views.docs_list' %}">
+    <button  type="submit" class="save btn btn-default" >Wróć</button></a>
+
 </center>
 
 {% endblock %}

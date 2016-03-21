@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<center>    
+<center>
 
     <form method="POST" class="docs-form">{% csrf_token %}
 
@@ -38,9 +38,9 @@
     Bylibyśmy także bardzo zobowiązani, gdyby Pan Rektor zgodził się objąć Patronatem Honorowym nasz Rajd.
     </strong><br><br>
 </div>
-<div class="Akapit2">    
+<div class="Akapit2">
     {{form.text4}}<br>
-    
+
     Prosimy o pozytywne rozpatrzenie naszej prośby.
     </p>
 </div>
@@ -70,8 +70,12 @@
     {{form.sign4}}
 </div>
 
-        <button type="submit" class="save btn btn-default">Zapisz</button>
+        <button type="submit" class="save btn btn-default">Generuj i zapisz</button>
     </form>
+
+    <a href="{% url 'Documents.views.docs_list' %}">
+    <button  type="submit" class="save btn btn-default" >Wróć</button></a>
+
 </center>
 
 {% endblock %}

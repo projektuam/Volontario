@@ -1,0 +1,50 @@
+*{
+margin: 0;
+padding: 0;
+border: 0;
+line-height: 1.4em;
+vertical-align: baseline;
+text-decoration: none;
+outline: 0;
+vertical-align: center;
+}
+
+#top {
+    margin: -30pt -40pt -40pt -40pt;
+  	padding-left: 210pt;
+
+}
+
+#centre{
+	margin: 75pt -25pt 75pt -25pt;
+	vertical-align: center;
+	text-align: justify;
+}
+
+#down{
+	font-size: 9pt;
+	position: absolute;
+	bottom: 0;	
+  	margin: -50pt -50pt -50pt -50pt;
+  	padding-left: 200pt;
+}
+
+#p {
+	text-align: center;
+	margin-left: 60pt;
+    font-size: 11pt;
+    width: 240px;
+    position: relative;   
+    float: left;
+    overflow: auto;
+}
+
+#l {
+	text-align: center;
+	margin-right: 60pt;  
+    font-size: 11pt;
+    width: 240px;
+    position: relative;   
+    float: right;
+    overflow: auto;
+}

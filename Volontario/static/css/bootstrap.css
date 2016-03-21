@@ -11,10 +11,10 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
- 
+
   background-color: #007FFF;
 
- 
+
 }
 article,
 aside,
@@ -289,7 +289,7 @@ background: -ms-linear-gradient(45deg, rgba(111,179,211,1) 0%, rgba(111,179,211,
 background: linear-gradient(45deg, rgba(111,179,211,1) 0%, rgba(111,179,211,1) 9%, rgba(61,138,174,1) 19%, rgba(73,149,185,1) 24%, rgba(87,163,199,1) 30%, rgba(75,151,187,1) 38%, rgba(61,138,174,1) 47%, rgba(61,138,174,1) 47%, rgba(87,163,199,1) 59%, rgba(87,163,199,1) 64%, rgba(87,163,199,1) 67%, rgba(87,163,199,1) 74%, rgba(87,163,199,1) 77%, rgba(61,138,174,1) 84%, rgba(87,163,199,1) 91%, rgba(87,163,199,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fb3d3', endColorstr='#57a3c7', GradientType=1 );
    margin: 5px 100px 0px 100px ;
-  
+
 }
 input,
 button,
@@ -767,6 +767,7 @@ pre code {
   }
 }
 .container-fluid {
+  width: 1004px;
   padding-right: 15px;
   padding-left: 15px;
   margin: auto;

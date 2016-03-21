@@ -1,22 +1,33 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 	{% for doc in docs %}
-	<hr>
-			ZWOLNIENIE <br><br>
 
-           typ dokumentu: {{doc.form_type}}<br>
-           miejscowość: {{doc.place}},<br>
-           data: {{doc.date}},<br>
-           student: {{doc.text2}},<br>
-           data zwol: {{doc.chart}},<br>
-           godzina zwol: {{doc.chart2}},<br>
-           impreza: {{doc.text3}},<br>
-           stanow.1: {{doc.sign1}},<br>
-           podpis 1: {{doc.sign2}},<br>
-           stanow.2: {{doc.sign3}},<br>
-           podpis 2: {{doc.sign4}}
+    <center>
+
+          {% if doc.form_type == "2" %}
+            <div class="topp">PROŚBA O PATRONAT</div><br>
+          {% elif doc.form_type  == "1" %}
+            <div class="topp2">ZWOLNIENIE</div><br>
+          {% endif %}
+
+          {% if doc.form_type == "2" %}
+            <div class="doc_font">Impreza: {{doc.text2}}</div>
+          {% elif doc.form_type  == "1" %}
+            <div class="doc_font"><col color="red">Zwolninenie dla:</col> {{doc.chart3}}</div>
+          {% endif %}
+
+          data: {{doc.date}}
+
+
+          <br>
+          <p align="right"><a href="{% url 'Documents.views.docs_remove' pk=doc.id %}"><button type="submit" class="btn btn-danger">Usuń</button></a>
+
+          <a href="{% url 'Documents.views.docs_edit' pk=doc.id %}"><button type="submit" class="btn btn-danger">Edytuj</button></a>
+
+          <a href="{% url 'Documents.views.docs_generate' pk=doc.id %}"><button type="submit" class="btn btn-danger">Generuj</button></a>
+          </p>
+    </center>
 <hr>
 	{% endfor %}
 {% endblock content %}

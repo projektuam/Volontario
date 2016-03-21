@@ -33,6 +33,11 @@ class Docs(models.Model):
     sign4 = models.CharField(max_length=50, null=True, blank=True)
     header = models.TextField()
     #users = models.ManyToManyField()
+    
+
+    class Meta:
+        ordering = ['-id']
+
     def add_doc(self):
         #self.date = timezone.now()
         self.save()
